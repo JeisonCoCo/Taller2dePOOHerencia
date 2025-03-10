@@ -18,6 +18,12 @@ public class Rhombus : Square
         set => _d1 = ValidateD1(value);
     }
 
+    public double D2
+    {
+        get => _d2;
+        set => _d2 = ValidateD2(value);
+    }
+
     protected double ValidateD1(double value)
     {
         if (value <= 0)
@@ -30,11 +36,12 @@ public class Rhombus : Square
         if (value <= 0)
             throw new ArgumentException("La diagonal D2 debe ser mayor que 0.");
         return value;
-    }
-
-    // Área = (D1 * D2) / 2
-    public override double GetArea() => (D1 * D2) / 2;
-
-    // Perímetro = 4 * A
+    }    public override double GetArea() => (D1 * D2) / 2;
     public override double GetPerimeter() => 4 * A;
+    protected double ValidateB(double value)
+        {
+            if (value <= 0)
+                throw new ArgumentException("El lado B debe ser mayor que 0.");
+            return value;
+    }
 }

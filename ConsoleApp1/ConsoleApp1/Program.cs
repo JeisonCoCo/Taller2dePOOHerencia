@@ -23,8 +23,7 @@ class Program
 
             foreach (var figure in figures)
             {
-                // Cada figura usa su ToString() para mostrar área y perímetro
-                Console.WriteLine(figure);
+                       Console.WriteLine(figure);
             }
         }
         catch (Exception ex)
@@ -33,5 +32,5 @@ class Program
         }
     }
 }
-}
+
 

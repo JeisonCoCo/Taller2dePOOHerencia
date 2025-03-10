@@ -3,7 +3,7 @@
   <Class Name="Rhombus">
     <Position X="7.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAEIAAkAEAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAACAAAAAAAAAAAAQAAAAAAEIAAkAEAAAAAA=</HashCode>
       <FileName>Rhombus.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -17,7 +17,7 @@
   <Class Name="ConsoleApp1.Kite">
     <Position X="10" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAAAACAAAIAAAAAAAAAEAAAAAEAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAIAAAAAAAAAEAAAAAEAEAAAA=</HashCode>
       <FileName>Kite.cs</FileName>
     </TypeIdentifier>
   </Class>

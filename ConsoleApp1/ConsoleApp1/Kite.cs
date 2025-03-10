@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
     public class Kite : Rhombus
     {
         private double _b;
@@ -30,16 +29,7 @@ namespace ConsoleApp1
                 throw new ArgumentException("El lado B debe ser mayor que 0.");
             return value;
         }
-
-        // Área = (D1 * D2) / 2 (igual que Rhombus)
         public override double GetArea() => (D1 * D2) / 2;
-
-        // Perímetro = 2 * (A + B)
         public override double GetPerimeter() => 2 * (A + B);
-
-        private string GetDebuggerDisplay()
-        {
-            return ToString();
-        }
     }
 }
