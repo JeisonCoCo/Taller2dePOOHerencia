@@ -1,6 +1,7 @@
 ﻿using ConsoleApp1;
 using Geometry;
 using System.Drawing;
+using Rectangle = ConsoleApp1.Rectangle;
 
 class Program
 {

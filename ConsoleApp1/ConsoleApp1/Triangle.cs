@@ -10,12 +10,18 @@ namespace ConsoleApp1
     {
         private double _c;
         private double _h;
+        private double v;
 
         public Triangle(string name, double a, double b, double c, double h)
             : base(name, a, b)
         {
             C = c;
             H = h;
+        }
+
+        public Triangle(string name, double a, double b, double v) : base(name, a, b)
+        {
+            this.v = v;
         }
 
         public double C
