@@ -8,7 +8,7 @@ namespace ConsoleApp1
 {
     public class Parallelogram : Rectangle
     {
-        private double _h; // altura
+        private double _h;
 
         public Parallelogram(string name, double a, double b, double h)
             : base(name, a, b)
@@ -19,17 +19,18 @@ namespace ConsoleApp1
         public double H
         {
             get => _h;
-            set
-            {
-                if (value <= 0) throw new ArgumentException("Altura debe ser > 0");
-                _h = value;
-            }
+            set => _h = ValidateH(value);
         }
 
-        // Área = base * altura (tomamos la base como B, o A, según convenga; 
-        // aquí asumimos A es la base, y B es el otro lado)
-        // El diagrama sugiere: Área = B * H. Ajusta si tu interpretación es distinta.
-        public override double GetArea() => B * H;
+        protected double ValidateH(double value)
+        {
+            if (value <= 0)
+                throw new ArgumentException("La altura H debe ser mayor que 0.");
+            return value;
+        }
+
+        // Área = base (A) * altura (H)
+        public override double GetArea() => A * H;
 
         // Perímetro = 2 * (A + B)
         public override double GetPerimeter() => 2 * (A + B);

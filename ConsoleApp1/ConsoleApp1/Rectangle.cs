@@ -19,18 +19,17 @@ namespace ConsoleApp1
         public double B
         {
             get => _b;
-            set
-            {
-                if (value <= 0) throw new ArgumentException("B debe ser > 0");
-                _b = value;
-            }
+            set => _b = ValidateB(value);
         }
 
-        // Área = A * B
-        public override double GetArea() => A * B;
+        protected double ValidateB(double value)
+        {
+            if (value <= 0)
+                throw new ArgumentException("El lado B debe ser mayor que 0.");
+            return value;
+        }
 
-        // Perímetro = 2 * (A + B)
+        public override double GetArea() => A * B;
         public override double GetPerimeter() => 2 * (A + B);
     }
 }
-

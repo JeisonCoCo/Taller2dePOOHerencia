@@ -3,24 +3,28 @@ using System.Collections.Generic;
 
 namespace Geometry
 {
-    // CLASE BASE ABSTRACTA
+
     public abstract class GeometricFigure
     {
         public string Name { get; set; }
 
-        protected GeometricFigure(string name)
-        {
-            Name = name;
-        }
+    public double D2
+    {
+        get => _d2;
+        set => _d2 = ValidateD2(value);
+    }
 
-        // Métodos abstractos que cada figura concreta implementará
+        protected GeometricFigure(string name) => Name = name;
         public abstract double GetArea();
         public abstract double GetPerimeter();
-
-        // Formato de impresión para que coincida con el resultado esperado
         public override string ToString()
         {
-            // Ajusta las cifras decimales según lo requieras. Aquí se usan 5 decimales.
+            // Ajusta el número de decimales a tu gusto (F5 = 5 decimales)
             return $"{Name} => Area.....: {GetArea():F5}\tPerimeter: {GetPerimeter():F5}";
+            {
+                // Ajusta el número de decimales a tu gusto (F5 = 5 decimales)
+                return $"{Name} => Area.....: {GetArea():F5}\tPerimeter: {GetPerimeter():F5}";
+            }
         }
     }
+}

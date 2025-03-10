@@ -8,11 +8,11 @@ namespace ConsoleApp1
 {
     public class Triangle : Rectangle
     {
-        private double _c; // tercer lado
-        private double _h; // altura para el cálculo de área (si la base es B)
+        private double _c;
+        private double _h;
 
-        public Triangle(string name, double b, double c, double h)
-            : base(name, 0, b) // "A" lo dejamos en 0, y B = b
+        public Triangle(string name, double a, double b, double c, double h)
+            : base(name, a, b)
         {
             C = c;
             H = h;
@@ -21,32 +21,33 @@ namespace ConsoleApp1
         public double C
         {
             get => _c;
-            set
-            {
-                if (value <= 0) throw new ArgumentException("C debe ser > 0");
-                _c = value;
-            }
+            set => _c = ValidateC(value);
         }
 
         public double H
         {
             get => _h;
-            set
-            {
-                if (value <= 0) throw new ArgumentException("Altura debe ser > 0");
-                _h = value;
-            }
+            set => _h = ValidateH(value);
         }
 
-        // Área = (B * H) / 2  (B es el segundo lado del padre)
+        protected double ValidateC(double value)
+        {
+            if (value <= 0)
+                throw new ArgumentException("El lado C debe ser mayor que 0.");
+            return value;
+        }
+
+        protected double ValidateH(double value)
+        {
+            if (value <= 0)
+                throw new ArgumentException("La altura H debe ser mayor que 0.");
+            return value;
+        }
+
+        // Área = (B * H) / 2  (B viene de Rectangle)
         public override double GetArea() => (B * H) / 2;
 
-        // Perímetro = A + B + C, pero A es 0 en este uso forzado. 
-        // Para coincidir con la salida, se asume A=0 + B + C = B + C => 
-        // sin embargo, en tu ejemplo final se ve que sí hay un valor 
-        // que termina sumando. Ajusta según tu necesidad.
-        // Aquí lo haremos "0 + B + C" = B + C, pero 
-        // si el enunciado dice "Perimeter = A + B + C", añade un "A" si procede.
+        // Perímetro = A + B + C
         public override double GetPerimeter() => A + B + C;
     }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Geometry;
+using System;
 
 public class Square : GeometricFigure
 {
@@ -12,11 +13,14 @@ public class Square : GeometricFigure
     public double A
     {
         get => _a;
-        set
-        {
-            if (value <= 0) throw new ArgumentException("Lado debe ser > 0");
-            _a = value;
-        }
+        set => _a = ValidateA(value);
+    }
+
+    protected double ValidateA(double value)
+    {
+        if (value <= 0)
+            throw new ArgumentException("El lado A debe ser mayor que 0.");
+        return value;
     }
 
     public override double GetArea() => A * A;

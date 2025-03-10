@@ -9,33 +9,31 @@ namespace ConsoleApp1
 {
     public class Trapeze : Triangle
     {
-        private double _a; // un lado adicional (usaremos "A" como base 1)
-        private double _d; // el otro lado (superior o inferior)
+        private double _d;
 
         public Trapeze(string name, double a, double b, double c, double d, double h)
-            : base(name, b, c, h)
+            : base(name, a, b, c, h)
         {
-            _a = a;
-            _d = d;
+            D = d;
+        }
+
+        public double D
+        {
+            get => _d;
+            set => _d = ValidateD(value);
+        }
+
+        protected double ValidateD(double value)
+        {
+            if (value <= 0)
+                throw new ArgumentException("El lado D debe ser mayor que 0.");
+            return value;
         }
 
         // Área = (B + D) * H / 2
-        public override double GetArea()
-        {
-            return (B + _d) * H / 2;
-        }
+        public override double GetArea() => (B + D) * H / 2;
 
         // Perímetro = A + B + C + D
-        public override double GetPerimeter()
-        {
-            return _a + B + C + _d;
-        }
-
-        public override string ToString()
-        {
-            // Sobrescribimos ToString para respetar el formato del padre
-            // pero usando nuestras fórmulas
-            return $"{Name} => Area.....: {GetArea():F5}\tPerimeter: {GetPerimeter():F5}";
-        }
+        public override double GetPerimeter() => A + B + C + D;
     }
 }
