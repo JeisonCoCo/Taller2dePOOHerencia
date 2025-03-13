@@ -20,13 +20,6 @@ namespace TriangularInferior
 
         }
         
-            for (int i = 0; i < _N; i++)
-            {
-            }
-            for (int j = 0; j < _N; j++)
-            {
-                matriz[i, j] = int + j;
-            }
-        }
+           
     }
 }
