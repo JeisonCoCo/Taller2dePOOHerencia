@@ -12,8 +12,7 @@ namespace TriangularInferior
         private int[,] matriz;
         public Ejercicio31(int n)
         {
-            N = n;
-            matriz = new int[N ,N];
+
         }
         
            
