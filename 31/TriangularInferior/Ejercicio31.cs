@@ -15,10 +15,6 @@ namespace TriangularInferior
             N = n;
             matriz = new int[N ,N];
         }
-        private void Ejercicio31()
-        {
-
-        }
         
            
     }
