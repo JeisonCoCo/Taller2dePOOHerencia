@@ -3,7 +3,6 @@
 namespace RelojDeArena
 {
 
-
     class Program
     {
         static void Main()
