@@ -6,10 +6,23 @@ using System.Threading.Tasks;
 
 namespace TriangularInferior
 {
-    internal class Program
+    class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            try
+            {
+                Console.Write("Ingrese el orden de la matriz: ");
+                int n = int.Parse(Console.ReadLine());
+
+                Matriz matriz = new Matriz(n);
+                matriz.MostrarMatriz();
+                matriz.MostrarTriangularInferior();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
         }
     }
 }
