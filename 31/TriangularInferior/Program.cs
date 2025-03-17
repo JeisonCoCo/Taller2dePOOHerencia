@@ -8,6 +8,7 @@ namespace TriangularInferior
 {
     class Program
     {
+
         static void Main()
         {
             try
