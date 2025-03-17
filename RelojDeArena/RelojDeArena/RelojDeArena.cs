@@ -11,6 +11,7 @@ namespace RelojDeArena
         private int[,] matriz;
         private int orden;
 
+
         public RelojDeArena(int n)
         {
             if (n % 2 == 0 || n <= 0)
